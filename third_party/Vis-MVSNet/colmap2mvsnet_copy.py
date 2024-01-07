@@ -431,7 +431,7 @@ if __name__ == '__main__':
     for image_id in images.keys():
         if args.convert_format:
             img = cv2.imread(os.path.join(image_dir, images[image_id].name))
-            cv2.imwrite(os.path.join(renamed_dir, '%d.jpg' % int(image_id)-1), img)
+            cv2.imwrite(os.path.join(renamed_dir, '%d.jpg' % (image_id-1)), img)
         else:
             # os.remove(os.path.join(image_dir, '%08d.jpg' % i))
             shutil.copyfile(os.path.join(image_dir, images[image_id].name), os.path.join(renamed_dir, '%d.jpg' % str(int(image_id)-1)))  
