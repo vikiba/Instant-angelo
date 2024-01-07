@@ -17,7 +17,7 @@ colmap model_converter \
 model_converter_time=`date +"%Y-%m-%d %H:%M:%S"`
 
 echo "---colmap2mvsnet---"
-python third_party/Vis-MVSNet/colmap2mvsnet.py --dense_folder $INPUT_DIR --max_d 256 --convert_format
+python third_party/Vis-MVSNet/colmap2mvsnet_copy.py --dense_folder $INPUT_DIR --max_d 256 --convert_format
 colmap2mvsnet_time=`date +"%Y-%m-%d %H:%M:%S"`
 
 # echo "---mvsnet_inference---"
