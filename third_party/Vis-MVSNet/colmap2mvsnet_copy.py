@@ -294,8 +294,8 @@ if __name__ == '__main__':
 
     image_dir = os.path.join(args.dense_folder, 'images')
     model_dir = os.path.join(args.dense_folder, 'sparse')
-    cam_dir = os.path.join(args.dense_folder, 'cams')
-    renamed_dir = os.path.join(args.dense_folder, 'mvs_images')
+    cam_dir = os.path.join(args.dense_folder, 'mvs', 'cams')
+    renamed_dir = os.path.join(args.dense_folder, 'mvs', 'images')
 
     cameras, images, points3d = read_model(model_dir, '.txt')
     num_images = len(list(images.items()))
