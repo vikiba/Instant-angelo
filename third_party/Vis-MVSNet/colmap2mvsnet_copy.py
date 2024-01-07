@@ -421,7 +421,7 @@ if __name__ == '__main__':
                 f.write('\n')
             f.write('\n%f %f %f %f\n' % (depth_ranges[image_id][0], depth_ranges[image_id][1], depth_ranges[image_id][2], depth_ranges[image_id][3]))
 
-    with open(os.path.join(args.dense_folder, 'pair.txt'), 'w') as f:
+    with open(os.path.join(args.dense_folder, 'mvs', 'pair.txt'), 'w') as f:
         f.write('%d\n' % len(images))
         for i, sorted_score in view_sel.items():
             f.write('%d\n%d ' % (i, len(sorted_score)))
