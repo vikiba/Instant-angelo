@@ -17,20 +17,20 @@ colmap model_converter \
 model_converter_time=`date +"%Y-%m-%d %H:%M:%S"`
 
 echo "---colmap2mvsnet---"
-python third_party/Vis-MVSNet/colmap2mvsnet.py --dense_folder $INPUT_DIR/dense/0 --max_d 256 --convert_format
+python third_party/Vis-MVSNet/colmap2mvsnet.py --dense_folder $INPUT_DIR --max_d 256 --convert_format
 colmap2mvsnet_time=`date +"%Y-%m-%d %H:%M:%S"`
 
-echo "---mvsnet_inference---"
+# echo "---mvsnet_inference---"
 mkdir -p $INPUT_DIR/dense/mvsnet_fusion
-python third_party/Vis-MVSNet/test.py --data_root $INPUT_DIR/dense/0/mvs \
-        --dataset_name general --num_src 48 \
+python third_party/Vis-MVSNet/test.py --data_root $INPUT_DIR/dense \
+        --dataset_name general --num_src 4 \
         --max_d 256 --load_path third_party/Vis-MVSNet/pretrained_model/vis \
         --write_result --result_dir $INPUT_DIR/dense/mvsnet_fusion
 mvsnet_inference_time=`date +"%Y-%m-%d %H:%M:%S"`
 
 echo "---mvsnet_fusion---"
 python third_party/Vis-MVSNet/fusion.py --data $INPUT_DIR/dense/mvsnet_fusion \
-        --pair $INPUT_DIR/dense/0/mvs/pair.txt
+        --pair $INPUT_DIR/dense/pair.txt
 mvsnet_fusion_time=`date +"%Y-%m-%d %H:%M:%S"`
 
 echo "---angelo_recon---"
