@@ -30,7 +30,7 @@ mvsnet_inference_time=`date +"%Y-%m-%d %H:%M:%S"`
 
 echo "---mvsnet_fusion---"
 python third_party/Vis-MVSNet/fusion.py --data $INPUT_DIR/dense/mvsnet_fusion \
-        --pair $INPUT_DIR/dense/pair.txt
+        --pair $INPUT_DIR/dense/0/pair.txt
 mvsnet_fusion_time=`date +"%Y-%m-%d %H:%M:%S"`
 
 echo "---angelo_recon---"
