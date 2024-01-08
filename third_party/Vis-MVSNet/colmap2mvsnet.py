@@ -292,7 +292,7 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    image_dir = os.path.join(args.dense_folder, 'orig_images')
+    image_dir = os.path.join(args.dense_folder, 'images')
     model_dir = os.path.join(args.dense_folder, 'sparse', '0')
     cam_dir = os.path.join(args.dense_folder, 'dense', 'cams')
     renamed_dir = os.path.join(args.dense_folder, 'dense', 'images')
