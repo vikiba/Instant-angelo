@@ -300,7 +300,7 @@ if __name__ == '__main__':
     cameras, images, points3d = read_model(model_dir, '.txt')
     num_images = len(list(images.items()))
 
-    if os.path.exists(os.path.join(args.dense_folder, 'pair.txt')):
+    if os.path.exists(os.path.join(args.dense_folder, 'dense', 'pair.txt')):
         print('Image pair ' + os.path.join(args.dense_folder, 'dense', 'pair.txt') + ' exist.  Aborting')
         exit()
     
@@ -424,7 +424,7 @@ if __name__ == '__main__':
                     f.write(str(intrinsic[images[i+1].camera_id][j, k]) + ' ')
                 f.write('\n')
             f.write('\n%f %f %f %f\n' % (depth_ranges[i+1][0], depth_ranges[i+1][1], depth_ranges[i+1][2], depth_ranges[i+1][3]))
-    with open(os.path.join(args.dense_folder, 'pair.txt'), 'w') as f:
+    with open(os.path.join(args.dense_folder, 'dense', 'pair.txt'), 'w') as f:
         f.write('%d\n' % len(images))
         for i, sorted_score in enumerate(view_sel):
             f.write('%d\n%d ' % (i, len(sorted_score)))
