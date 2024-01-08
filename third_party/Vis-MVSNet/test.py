@@ -120,7 +120,7 @@ if __name__ == '__main__':
             if args.write_result:
                 ref_o = np.transpose(ref[0], [1, 2, 0])
                 ref_o = image_net_center_inv(ref_o)
-                ref_o = cv2.resize(ref_o, (ref_o.shape[1]//2, ref_o.shape[0]//2), interpolation=cv2.INTER_LINEAR)
+                ref_o = cv2.resize(ref_o, (ref_o.shape[0]//2, ref_o.shape[1]//2), interpolation=cv2.INTER_LINEAR)
                 ref_cam_o = ref_cam[0]
                 ref_cam_o = scale_camera(ref_cam_o, .5)
                 est_depth_o = est_depth[0, 0]
