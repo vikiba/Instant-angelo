@@ -23,7 +23,7 @@ colmap2mvsnet_time=`date +"%Y-%m-%d %H:%M:%S"`
 echo "---mvsnet_inference---"
 mkdir -p $INPUT_DIR/dense/mvsnet_fusion
 python third_party/Vis-MVSNet/test.py --data_root $INPUT_DIR/dense/0/mvs \
-        --dataset_name general --num_src 49 \
+        --dataset_name general --num_src 48 \
         --max_d 256 --load_path third_party/Vis-MVSNet/pretrained_model/vis \
         --write_result --result_dir $INPUT_DIR/dense/mvsnet_fusion
 mvsnet_inference_time=`date +"%Y-%m-%d %H:%M:%S"`
