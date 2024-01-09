@@ -105,7 +105,7 @@ def main():
         strategy=strategy,
         **config.trainer
     )
-
+    print("starting Training process")
     if args.train:
         if args.resume and not args.resume_weights_only:
             # FIXME: different behavior in pytorch-lighting>1.9 ?
