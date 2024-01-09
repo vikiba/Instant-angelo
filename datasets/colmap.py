@@ -255,6 +255,7 @@ class ColmapDatasetBase():
                     pts3d_confidence = plydata['vertex']['confidence']
                 else:
                     pts3d_confidence = np.ones([pts3d.shape[0]])
+                print("succesfully read dense point cloud!")
             else:
                 sparse_points_path = os.path.join(self.config.root_dir, 'sparse/0/points3D.bin')
                 print(f"Loading sparse prior from {sparse_points_path}")
