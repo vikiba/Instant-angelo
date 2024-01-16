@@ -15,7 +15,7 @@ dataset:
 
 model:
   name: neus
-  radius: 15
+  radius: 0.6
   num_samples_per_ray: 512
   train_num_rays: 256
   max_train_num_rays: 8192
@@ -39,7 +39,7 @@ model:
     finite_difference_eps: progressive
     isosurface:
       method: mc
-      resolution: 512
+      resolution: 300
       chunk: 2097152
       threshold: 0.
     xyz_encoding_config:
