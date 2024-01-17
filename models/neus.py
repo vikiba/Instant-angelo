@@ -316,7 +316,7 @@ class NeuSModel(BaseModel):
             print(normal.shape)
             print("features shape: ")
             print(features.shape)
-            rgb = self.texture(features, -normal, normal)
+            rgb = self.texture(features, -normal)
             #base_color = torch.sigmoid(features[..., 1:4])
             rgb = torch.sigmoid(rgb)
             print("rgb shape:")
