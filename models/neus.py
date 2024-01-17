@@ -312,6 +312,10 @@ class NeuSModel(BaseModel):
         if export_config.export_vertex_color:
             sdf, sdf_grad, features = chunk_batch(self.geometry, export_config.chunk_size, False, mesh['v_pos'].to(self.rank), with_grad=True, with_feature=True)
             normal = F.normalize(sdf_grad, p=2, dim=-1)
+            print("normal shape: ")
+            print(normal.shape)
+            print("features shape: ")
+            print(features.shape)
             rgb = self.texture(features, -normal, normal)
             #base_color = torch.sigmoid(features[..., 1:4])
             rgb = torch.sigmoid(rgb)
