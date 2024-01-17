@@ -51,6 +51,8 @@ class VolumeDualColor(nn.Module):
         dirs = (dirs + 1.) / 2. # (-1, 1) => (0, 1)
         dirs_embd = self.encoding(dirs.view(-1, self.n_dir_dims))
         network_inp = torch.cat([features.view(-1, features.shape[-1]), dirs_embd] + [arg.view(-1, arg.shape[-1]) for arg in args], dim=-1)
+        print("network input shape:")
+        print(network_inp.shape)
         color = self.network(network_inp).view(*features.shape[:-1], self.n_output_dims).float()
         if 'color_activation' in self.config:
             basecolor = get_activation(self.config.color_activation)(features[..., 1:4])
