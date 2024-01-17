@@ -68,10 +68,10 @@ def main():
             vertex_colors=mesh['v_rgb'].numpy(),
             vertex_normals=mesh['v_norm'].numpy()
         )
-    # mesh.visual.material = trimesh.visual.material.PBRMaterial(
-    #     metallicFactor=0.25,
-    #     roughnessFactor=0.25
-    # )
+    mesh.visual.material = trimesh.visual.material.PBRMaterial(
+        metallicFactor=0.25,
+        roughnessFactor=0.25
+    )
     
     os.makedirs(args.output_dir, exist_ok=True)
     logging.info("Exporting mesh.")
