@@ -317,7 +317,7 @@ class NeuSModel(BaseModel):
             print("features shape: ")
             print(features.shape)
             #only use one normal:
-            oneNormal = normal.copy()
+            oneNormal = normal.detach().clone()
             oneNormal[...] = oneNormal[0]
             rgb = chunk_batch(self.texture, export_config.chunk_size, False, features, -oneNormal)
             #base_color = torch.sigmoid(features[..., 1:4])
