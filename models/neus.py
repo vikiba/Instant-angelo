@@ -318,7 +318,7 @@ class NeuSModel(BaseModel):
             print(features.shape)
             rgb = chunk_batch(self.texture, export_config.chunk_size, False, features, normal)
             #base_color = torch.sigmoid(features[..., 1:4])
-            rgb = torch.sigmoid(rgb)
+            rgb = torch.sigmoid(rgb) * 0.28209479177387814 + 0.5
             print("rgb shape:")
             print(rgb.shape)
             print("first rgb color:")
