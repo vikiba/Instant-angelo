@@ -56,7 +56,7 @@ class VolumeDualColor(nn.Module):
         color = self.network(network_inp).view(*features.shape[:-1], self.n_output_dims).float()
         if 'color_activation' in self.config:
             basecolor = get_activation(self.config.color_activation)(features[..., 1:4])
-            color = get_activation(self.config.color_activation)(color) + basecolor
+            color = get_activation(self.config.color_activation)(color) #+ basecolor
         return color
 
     def update_step(self, epoch, global_step):
