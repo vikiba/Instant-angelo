@@ -65,7 +65,7 @@ def main():
     mesh = trimesh.Trimesh(
             vertices=mesh['v_pos'],
             faces=mesh['t_pos_idx'],
-            vertex_colors=mesh['v_rgb'].numpy(),
+            vertex_colors=mesh['v_rgb'].numpy() * 255,
             vertex_normals=mesh['v_norm'].numpy()
         )
     mesh.visual.material = trimesh.visual.material.PBRMaterial(
